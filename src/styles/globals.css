@@ -4,10 +4,10 @@
 
 @layer base {
   :root {
-    --background: #f5d0fe;
+    --background: #fae8ff;
     --foreground: #171717;
     --font: 220 13% 91%;
-    --header: hsl(0, 0%, 98%);
+    --header: hsl(0, 0%, 100%);
     /* header라는 컬러는사용하기위해 hsl() */
     --border: 220 13% 91%;
 
@@ -20,11 +20,11 @@
     --destructive-foreground: 0 0% 98%;
   }
   .dark {
-    --background: #171717;
+    --background: hsl(220.9 39.3% 11%);
     --foreground: #f0abfc;
     --font: 0 0% 98%;
 
-    --header: hsl(296.8 90.2% 16.1%);
+    --header: rgb(31, 41, 55);
     --border: 240 0% 59%;
     --primary: 0 0% 98%;
     --primary-hover: 220 13% 91%;
