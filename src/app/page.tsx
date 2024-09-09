@@ -1,8 +1,7 @@
-export default function Home() {
+export default function HomePage() {
   return (
-    // <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-    <div className="bg-white min-h-screen grid items-center justify-center">
-      <p className="text-black">inji</p>
+    <div className=" min-h-screen grid items-center justify-center">
+      <p className="">inji</p>
     </div>
   );
 }

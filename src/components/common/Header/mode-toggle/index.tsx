@@ -8,11 +8,11 @@ export default function ModeToggle() {
   const handleToggle = () =>
     setTheme(currentTheme === "dark" ? "light" : "dark");
   return (
-    <button
+    <switch
       onClick={handleToggle}
-      className="bg-pink-100 dark:bg-white flex items-center transition duration-300 focus:outline-none shadow"
+      className="  text-black dark:text-purple-400 flex items-center transition duration-300 "
     >
       {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
-    </button>
+    </switch>
   );
 }

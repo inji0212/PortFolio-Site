@@ -2,26 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f5d0fe;
+    --foreground: #171717;
+    --font: 220 13% 91%;
+    --header: hsl(0, 0%, 98%);
+    /* header라는 컬러는사용하기위해 hsl() */
+    --border: 220 13% 91%;
+
+    --primary: 220 6% 10%;
+    --primary-hover: 240 4% 16%;
+    --primary-active: 240 4% 6%;
+    --primary-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
   }
-}
+  .dark {
+    --background: #171717;
+    --foreground: #f0abfc;
+    --font: 0 0% 98%;
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+    --header: hsl(296.8 90.2% 16.1%);
+    --border: 240 0% 59%;
+    --primary: 0 0% 98%;
+    --primary-hover: 220 13% 91%;
+    --primary-active: 220 13% 81%;
+    --primary-foreground: 220 6% 10%;
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--font);
+
+    font-family: var(--font-pretendard), sans-serif;
+  }
+  .bg-header {
+    background-color: var(--header);
+    /* header라는 컬러를 사용하기 위해 선언
+     */
   }
 }
