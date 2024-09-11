@@ -4,7 +4,8 @@
 
 @layer base {
   :root {
-    --background: #fae8ff;
+    --background: #fdf4ff;
+    /* #fae8ff; */
     --foreground: #171717;
     --font: 220 13% 91%;
     --header: hsl(0, 0%, 100%);
