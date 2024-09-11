@@ -1,6 +1,7 @@
-// components/card/index.tsx
+// components/ProjectCard.tsx
 "use client";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import Modal from "./Modal";
 
 interface ProjectCardProps {
@@ -17,7 +18,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="project-card bg-header w-full max-w-xl mx-[10vw] aspect-video flex flex-col items-center justify-center transform transition-transform duration-300 ease-in-out cursor-pointer shadow hover:scale-105">
+    <motion.div
+      className="project-card bg-header w-full max-w-xl mx-[10vw] aspect-video flex flex-col items-center justify-center transform transition-transform duration-300 ease-in-out cursor-pointer shadow hover:scale-105"
+      onClick={() => setIsOpen(true)}
+      initial={{ opacity: 0, y: 50, rotateY: "45deg" }}
+      whileInView={{ opacity: 1, y: 0, rotateY: "0deg" }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{
+        duration: 0.8,
+        ease: "easeOut",
+        delay: 0.2,
+      }}
+    >
       <img
         src={project.image}
         alt={project.name}
@@ -36,7 +48,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         Learn More
       </button>
       {isOpen && <Modal project={project} onClose={() => setIsOpen(false)} />}
-    </div>
+    </motion.div>
   );
 };
 
