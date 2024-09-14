@@ -11,11 +11,11 @@ const ProjectCard = ({ project, onClick }: any) => (
     <img
       src={project.image}
       alt={project.title}
-      className="w-auto h-40 object-cover mb-4 rounded "
+      className="w-auto aspect-video object-cover mb-4 rounded "
     />
     <h3 className="text-xl font-bold mb-2">{project.title}</h3>
     <p className="mb-4">{project.description}</p>
-    <div className="flex space-x-2">
+    <div className="flex space-x-2 relative flex-wrap">
       {project.stack.map((tech: string, index: number) => (
         <Chip>{tech}</Chip>
       ))}
