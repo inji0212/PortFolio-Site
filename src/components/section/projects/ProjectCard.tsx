@@ -5,7 +5,7 @@ import React from "react";
 
 const ProjectCard = ({ project, onClick }: any) => (
   <div
-    className="bg-gray-100 dark:bg-gray-800 shadow-md p-5 rounded-lg cursor-pointer hover:scale-105 transform transition-transform duration-100 mx-10"
+    className="bg-gray-100 dark:bg-gray-800 shadow-md p-5 rounded-lg cursor-pointer hover:scale-105 transform transition-transform duration-100 mx-4"
     onClick={onClick}
   >
     <img

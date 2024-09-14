@@ -5,6 +5,7 @@ import { FaGithub } from "react-icons/fa";
 import ModeToggle from "../../common/header/mode-toggle";
 import Image from "next/image"; // next/image 사용
 import { SiTypescript } from "react-icons/si";
+import { ArrowUp } from "lucide-react";
 
 const Header: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -77,9 +78,9 @@ const Header: React.FC = () => {
       <div className="fixed bottom-5 right-5">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="p-3 bg-fuchsia-500 text-white rounded-full shadow-lg"
+          className=" bg-white dark:bg-fuchsia-100  border-2 border-fuchsia-600 text-fuchsia-600 rounded-full shadow-lg p-2 hover:scale-110 transform duration-200 "
         >
-          ⬆️
+          <ArrowUp />
         </button>
       </div>
       {/* 스크롤 프로그래스 바 */}

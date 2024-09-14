@@ -70,7 +70,7 @@ const Projects: React.FC = () => {
     <section id="projects" className="py-20 bg-white dark:bg-gray-900">
       <h2 className="text-6xl font-bold mb-10 text-center">PROJECTS</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-20">
         {projects.map((project, index) => (
           <ProjectCard
             key={index}

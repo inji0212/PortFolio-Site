@@ -50,7 +50,7 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="py-20 flex flex-col items-center min-h-screen bg-gray-100 dark:bg-gray-800"
+      className="py-20 flex justify-center flex-col items-center min-h-screen  bg-gray-100 dark:bg-gray-800"
     >
       <h2 className="text-6xl font-bold mb-10 text-center">CONTACT ME</h2>
       <form ref={formRef} className="max-w-md w-full" onSubmit={handleSubmit}>

@@ -7,7 +7,6 @@ const About: React.FC = () => (
     id="about"
     className="py-20 flex justify-center flex-col items-center min-h-screen"
   >
-    {" "}
     <h2 className="text-6xl font-bold mb-10 text-center">ABOUT</h2>
     {/* min-h-screen을 사용하여 최소 높이 설정 */}
     <div className="flex flex-col md:flex-row items-center h-4/5">
