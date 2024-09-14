@@ -21,7 +21,7 @@
     --destructive-foreground: 0 0% 98%;
   }
   .dark {
-    --background: hsl(220.9 39.3% 11%);
+    --background: #111827;
     --foreground: #f0abfc;
     --font: 0 0% 98%;
 

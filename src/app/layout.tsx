@@ -1,13 +1,12 @@
-// app/layout.tsx (또는 RootLayout 파일)
 import type { Metadata } from "next";
 import "@/styles/globals.css";
-import Header from "@/components/common/Header";
+import Header from "@/components/common/header";
 import pretendard from "@/styles/fonts";
 import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
-  title: "Inji's Portfolio",
-  description: "frontend developer",
+  title: "Inji's PortFolio",
+  description: "Frontend Developer Portfolio",
 };
 
 export default function RootLayout({
@@ -17,7 +16,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={pretendard.variable}>
-      <body className="bg-background duration-300 ease-in-out transition-colors">
+      <head>
+        {/* 파비콘 다크모드설정 */}
+        <link
+          rel="icon"
+          href="/img/in_light.svg"
+          type="image/svg+xml"
+          media="(prefers-color-scheme:light)"
+        />
+        <link
+          rel="icon"
+          href="/img/in_dark.svg"
+          type="image/svg+xml"
+          media="(prefers-color-scheme:dark)"
+        />
+      </head>
+      <body className="bg-white dark:bg-gray-900 transition-colors duration-300 ease-in-out">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
           {children}
