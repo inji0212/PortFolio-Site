@@ -8,6 +8,7 @@ export const FrontendSkills = [
   { name: "TypeScript", icon: "/img/skills/TypeScript.svg" },
   { name: "React", icon: "/img/skills/React.svg" },
   { name: "Next.js", icon: "/img/skills/NextJS-Light.svg" },
+  { name: "Zustand", icon: "/img/skills/Zustand.svg" },
 ];
 
 export const DevelopmentSkills = [
@@ -18,7 +19,7 @@ export const DevelopmentSkills = [
 export const ETCSkills = [
   { name: "Figma", icon: "/img/skills/Figma.svg" },
   { name: "Git", icon: "/img/skills/Git.svg" },
-  { name: "JavaScript", icon: "/img/skills/JavasCript.svg" },
-  { name: "JavaScript", icon: "/img/skills/JavasCript.svg" },
-  { name: "JavaScript", icon: "/img/skills/JavasCript.svg" },
+  { name: "Slack", icon: "/img/skills/Slack.svg" },
+  { name: "Trello", icon: "/img/skills/Trello.svg" },
+  { name: "Discord", icon: "/img/skills/Discord.svg" },
 ];
