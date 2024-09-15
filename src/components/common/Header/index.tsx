@@ -1,10 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import ModeToggle from "../../common/header/mode-toggle";
-import Image from "next/image";
-import { SiTypescript } from "react-icons/si";
 import { ArrowUp, Menu } from "lucide-react";
 
 const Header: React.FC = () => {
