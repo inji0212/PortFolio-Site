@@ -14,7 +14,7 @@ const ProjectCard: React.FC<{ project: Project; onClick: () => void }> = ({
   );
 
   return (
-    <li className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform cursor-pointer duration-300 hover:scale-105 list-none">
+    <li className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform cursor-pointer duration-300 hover:scale-105 list-none mx-5">
       <article
         onClick={onClick}
         className="flex flex-col h-full transform transition-transform duration-300 "
@@ -70,7 +70,7 @@ const ProjectCard: React.FC<{ project: Project; onClick: () => void }> = ({
           <p className="text-gray-600 dark:text-gray-300 text-sm mb-1">
             {project.date}
           </p>
-          <p className="text-sm text-gray-600 dark:text-gray-300 mb-2 truncate">
+          <p className="text-sm text-gray-600 dark:text-gray-300 mb-2 break-words">
             {project.titleDescription}
           </p>
           {/* Flex-wrap 적용 및 margin을 통한 간격 조정 */}

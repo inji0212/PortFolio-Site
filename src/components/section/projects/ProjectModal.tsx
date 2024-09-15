@@ -135,7 +135,10 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({
             <div className="bg-gray-100 p-3 rounded-lg ml-2">
               <ul className="list-disc list-inside text-sm text-gray-700">
                 {project.tasks.map((task, index) => (
-                  <li key={index} className="whitespace-pre-wrap">
+                  <li
+                    key={index}
+                    className="whitespace-pre-wrap mt-2 list-none"
+                  >
                     {task}
                   </li>
                 ))}

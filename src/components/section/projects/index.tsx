@@ -38,7 +38,7 @@ const Projects: React.FC = () => {
 
   return (
     <section id="projects" className="py-20 bg-white dark:bg-gray-900">
-      <h2 className="text-6xl font-bold mb-10 text-center">Projects</h2>
+      <h2 className="text-5xl font-bold mb-10 text-center">Projects</h2>
 
       {/* 검색 및 필터 */}
       <div className="flex flex-col md:flex-row justify-between items-center mx-auto max-w-xl mb-8 space-y-4 md:space-y-0">

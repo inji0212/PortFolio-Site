@@ -52,13 +52,13 @@ const Contact: React.FC = () => {
       id="contact"
       className="py-20 flex justify-center flex-col items-center min-h-screen  bg-gray-100 dark:bg-gray-800"
     >
-      <h2 className="text-6xl font-bold mb-10 text-center">CONTACT ME</h2>
+      <h2 className="text-5xl font-bold mb-10 text-center">CONTACT ME</h2>
       <form ref={formRef} className="max-w-md w-full" onSubmit={handleSubmit}>
         <input
           type="text"
           name="name"
           placeholder="Your Name"
-          className="w-full mb-4 px-4 py-2 rounded border border-gray-300 focus:ring focus:ring-fuchsia-600"
+          className="w-full mb-4 px-4 py-2 rounded-md shadow-sm  border border-gray-300 focus:outline-none focus:ring-2 focus:ring-fuchsia-600"
           value={formData.name}
           onChange={handleChange}
           required
@@ -67,7 +67,7 @@ const Contact: React.FC = () => {
           type="email"
           name="email"
           placeholder="Your Email"
-          className="w-full mb-4 px-4 py-2 rounded border border-gray-300 focus:ring focus:ring-fuchsia-600"
+          className="w-full mb-4 px-4 py-2 rounded-md shadow-sm  border border-gray-300 focus:outline-none focus:ring-2 focus:ring-fuchsia-600"
           value={formData.email}
           onChange={handleChange}
           required
@@ -75,14 +75,14 @@ const Contact: React.FC = () => {
         <textarea
           name="message"
           placeholder="Your Message"
-          className="w-full mb-4 px-4 py-2 rounded border border-gray-300 focus:ring focus:ring-fuchsia-600"
+          className="w-full mb-4 px-4 py-2 rounded-md shadow-sm  border border-gray-300 focus:outline-none focus:ring-2 focus:ring-fuchsia-600"
           value={formData.message}
           onChange={handleChange}
           required
         ></textarea>
         <button
           type="submit"
-          className="w-full bg-fuchsia-500 text-white px-4 py-2 rounded hover:bg-fuchsia-700 transition"
+          className="w-full bg-fuchsia-600 text-white px-4 py-2 rounded-lg hover:underline transition"
         >
           Send Message
         </button>
