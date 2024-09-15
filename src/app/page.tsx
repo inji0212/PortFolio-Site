@@ -17,17 +17,11 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      {!showMain ? (
-        <Intro />
-      ) : (
-        <>
-          <Header />
-          <About />
-          <Skills />
-          <Projects />
-          <Contact />
-        </>
-      )}
+      <Header />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
     </div>
   );
 };

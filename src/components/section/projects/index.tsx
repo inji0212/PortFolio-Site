@@ -1,84 +1,110 @@
 // components/sections/Projects.tsx
+"use client";
 import React, { useState } from "react";
-import ProjectCard from "./ProjectCard";
+import ProjectCard from "../projects/ProjectCard";
 import ProjectModal from "./ProjectModal";
-
-// 프로젝트 타입 정의
-type Project = {
-  title: string;
-  url: string;
-  image: string;
-  stack: string[];
-  description: string;
-};
-
-// 프로젝트 데이터 배열
-const projects: Project[] = [
-  {
-    title: "개인 포트폴리오 사이트(INJI’s portfolio)",
-    url: "https://github.com/inji0212/project1",
-    image: "/images/project1.png",
-    stack: ["Next.js", "tailwind.css", "Zustand", "TypeScript", "Vercel"],
-    description:
-      "개인 포트폴리오 사이트입니다.인트로 및 애니메이션을 포함하여 사용자에게 재미 요소를 주었으며 about, skills, project, contact을 통해 포트폴리오를 보다 편하게 보여주기 위해 제작하였습니다. ",
-  },
-  {
-    title: "컴포넌트 라이브러리 (컴포넌트 팩토리)",
-    url: "https://github.com/inji0212/project2",
-    image: "/img/ComponentFactory.png",
-    stack: ["Next.js ", "tailwind.css", "TypeScript", "Vercel"],
-    description:
-      "컴포넌트 팩토리는 컴포넌트 라이브러리입니다.여러 재사용가능한 컴포넌트 설명 및 예시로 사용자가 컴포넌트 사용시 보기 쉽고 뿐만 아니라 검색 기능을 통해 컴포넌트, 페이지 이동을 편히 하였습니다.",
-  },
-  {
-    title: "프로젝트 테스트 및 요약해주는 개발자 플랫폼 (프리어)",
-    url: "https://github.com/inji0212/project1",
-    image: "/images/project1.png",
-    stack: [
-      "TypeScript",
-      " React",
-      " Tailwind.css",
-      " styled-components",
-      "Zunstand",
-    ],
-    description:
-      "프리어란 개발자가 배포한 프로젝트를 테스터할 수 있는 개발자 플랫폼입니다.테스트뿐 아니라 개발자 커뮤니티로 소통의 창을 열어주며 테스트를 통해 얻은 코어(코인)으로 상점에서 물건을 기프트콘을 구매하실 수 있습니다. ",
-  },
-  {
-    title: "커뮤니티와 챌린지 요소인 출석체크가 포함된 웹 IDE (CoCo)",
-    url: "https://github.com/inji0212/project2",
-    image: "/img/ComponentFactory.png",
-    stack: [
-      "React",
-      "TypeScript",
-      "Zustand ",
-      "Styled-Components",
-      "Tailwind.CSS",
-      "Sock JS ( Web Socket )",
-    ],
-    description:
-      "COCO IDE는 별도 설치없이 브라우저를 통한 개발환경을 제공하는 IDE입니다. 반응형 메인페이지로 필요한 것들이 한눈에 보이며 이용자들 서로 응원을 해줄 단체 채팅과 출석 도장을 찍을 수 있는 챌린지적 요소등이 포함되어 있습니다.",
-  },
-  // 추가 프로젝트들...
-];
+import { projectsData, Project } from "@/data/projectsData";
+import { useDebounce } from "@/hooks/useDebounce";
+import { Filter, Search, X } from "lucide-react"; // Lucide 아이콘 추가
 
 const Projects: React.FC = () => {
-  // selectedProject의 타입을 Project 또는 null로 설정
+  const [searchTerm, setSearchTerm] = useState("");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [filter, setFilter] = useState<"All" | "Personal" | "Team">("All");
+
+  const debouncedSearchTerm = useDebounce(searchTerm);
+
+  // 필터링된 프로젝트 목록 계산
+  const filteredProjects = projectsData.filter((project) => {
+    const lowercasedSearchTerm = debouncedSearchTerm.toLowerCase();
+
+    const matchesSearch =
+      debouncedSearchTerm === "" ||
+      project.title.toLowerCase().includes(lowercasedSearchTerm) ||
+      project.titleDescription.toLowerCase().includes(lowercasedSearchTerm) ||
+      project.date.toLowerCase().includes(lowercasedSearchTerm) ||
+      project.description.toLowerCase().includes(lowercasedSearchTerm) ||
+      project.tasks.some((task) =>
+        task.toLowerCase().includes(lowercasedSearchTerm)
+      ) ||
+      project.stack.some((tech) =>
+        tech.toLowerCase().includes(lowercasedSearchTerm)
+      );
+
+    const matchesFilter = filter === "All" || project.teamSize === filter;
+
+    return matchesSearch && matchesFilter;
+  });
 
   return (
     <section id="projects" className="py-20 bg-white dark:bg-gray-900">
-      <h2 className="text-6xl font-bold mb-10 text-center">PROJECTS</h2>
+      <h2 className="text-6xl font-bold mb-10 text-center">Projects</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-20">
-        {projects.map((project, index) => (
-          <ProjectCard
-            key={index}
-            project={project}
-            onClick={() => setSelectedProject(project)}
+      {/* 검색 및 필터 */}
+      <div className="flex flex-col md:flex-row justify-between items-center mx-auto max-w-xl mb-8 space-y-4 md:space-y-0">
+        <div className="relative w-full md:w-auto flex items-center">
+          <Search className="absolute left-3 text-gray-500" size={20} />
+          <input
+            type="text"
+            placeholder="Search Projects..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="pl-10 pr-8 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 w-full"
           />
-        ))}
+          {searchTerm && (
+            <button
+              onClick={() => setSearchTerm("")}
+              className="absolute right-3 text-gray-500"
+            >
+              <X size={16} />
+            </button>
+          )}
+        </div>
+        <div className="flex space-x-4">
+          <Filter className="text-yellow-400 mt-0.5" size={18} />
+          <button
+            className={`${
+              filter === "All" ? "text-yellow-400" : ""
+            } cursor-pointer`}
+            onClick={() => setFilter("All")}
+          >
+            All
+          </button>
+          <button
+            className={`${
+              filter === "Personal" ? "text-yellow-400" : ""
+            } cursor-pointer`}
+            onClick={() => setFilter("Personal")}
+          >
+            Personal
+          </button>
+          <button
+            className={`${
+              filter === "Team" ? "text-yellow-400" : ""
+            } cursor-pointer`}
+            onClick={() => setFilter("Team")}
+          >
+            Team
+          </button>
+        </div>
       </div>
+
+      {/* 프로젝트 카드 리스트 */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-5 sm:mx-10">
+        {filteredProjects.length > 0 ? (
+          filteredProjects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              project={project}
+              onClick={() => setSelectedProject(project)}
+            />
+          ))
+        ) : (
+          <p className="text-center w-full">검색 결과가 없습니다.</p>
+        )}
+      </div>
+
+      {/* 선택된 프로젝트에 대한 모달 표시 */}
       {selectedProject && (
         <ProjectModal
           project={selectedProject}
