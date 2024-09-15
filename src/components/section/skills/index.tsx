@@ -62,10 +62,10 @@ const Skills: React.FC = () => {
         >
           {/* 프론트엔드 섹션 */}
           <div className="bg-white dark:bg-gray-700 shadow-md p-5 rounded-lg w-full md:w-[500px] skill-item">
-            <span className="text-fuchsia-500 text-2xl font-semibold mb-6 da">
+            <span className="text-fuchsia-500 text-2xl font-semibold ">
               FrontEnd
             </span>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-2">
               {FrontendSkills.map((skill, index) => (
                 <div
                   key={index}
@@ -92,7 +92,7 @@ const Skills: React.FC = () => {
             <span className="text-fuchsia-500 text-2xl font-semibold ">
               Development
             </span>
-            <div className="grid grid-cols-1 gap-8">
+            <div className="mt-2 mb-4 grid grid-cols-1 gap-8">
               {DevelopmentSkills.map((skill, index) => (
                 <div
                   key={index}
@@ -116,7 +116,7 @@ const Skills: React.FC = () => {
             <span className="text-fuchsia-500 text-2xl font-semibold ">
               ETC
             </span>
-            <div className="grid grid-cols-1 gap-8 ">
+            <div className="grid grid-cols-1 gap-8 mt-2 ">
               {ETCSkills.map((skill, index) => (
                 <div
                   key={index}
