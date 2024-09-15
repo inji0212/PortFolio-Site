@@ -39,6 +39,9 @@ export const projectsData: Project[] = [
     images: [
       "/img/projects/InjisPortFolio_1.png",
       "/img/projects/InjisPortFolio_2.png",
+      "/img/projects/InjisPortFolio_3.png",
+      "/img/projects/InjisPortFolio_4.png",
+      "/img/projects/InjisPortFolio_5.png",
     ],
   },
   {
@@ -96,13 +99,14 @@ export const projectsData: Project[] = [
             필수사항 없을 시 작성 및 수정이 불가능하게 설정하였습니다.
 
         - 게시물 전체보기 페이지
-            게시물마다 좋아요 기능과 좋아요 수, 조회수가 보이게 하였습니다.
+            게시물마다 좋아요 기능과 좋아요 수, 조회수가 보이며 프로필 클릭 시 해당 유저의 프로필 페이지로 이동합니다.
             게시물 수정과 삭제가 가능한 메뉴버튼이 있으며 게시물 검색, 분류 
             ( 전체, 내가 쓴 글, 내가 좋아요 한 글 세가지 필터, 카테고리 별( 전체+ it소식, 잡담/일상, 기술, 인턴십/공모전+ 공지) 분류,
             최신순, 조회순, 등록 순, 인기순 정렬 기능 )가 가능합니다.
 
         - 게시물 상세보기 페이지
-            게시물 좋아요 기능과 좋아요 수, 조회수가 보이며 게시물 수정과 삭제가 가능한 메뉴버튼이 있습니다.
+            게시물 좋아요 기능과 좋아요 수, 조회수가 보이며 게시물과 댓글의 프로필 클릭 시 해당 유저의 프로필 페이지로 이동합니다.
+            게시물 수정과 삭제가 가능한 메뉴버튼이 있습니다.
             각 게시물마다 댓글을 달 수 있으며 댓글 수정, 삭제도 가능합니다.`,
     ],
     stack: [
@@ -110,11 +114,17 @@ export const projectsData: Project[] = [
       "tailwind.css",
       "styled-components",
       "TypeScript",
-      "Zunstand",
+      "Zustand",
     ],
     images: [
-      "/img/projects/InjisPortFolio_1.png",
-      "/img/projects/InjisPortFolio_2.png",
+      "/img/projects/prier_1.png",
+      "/img/projects/prier_2.png",
+      "/img/projects/prier_3.png",
+      "/img/projects/prier_4.png",
+      "/img/projects/prier_5.png",
+      "/img/projects/prier_6.png",
+      "/img/projects/prier_7.png",
+      "/img/projects/prier_8.png",
     ],
   },
   {
@@ -147,8 +157,13 @@ export const projectsData: Project[] = [
       "Sock.JS ( Web Socket )",
     ],
     images: [
-      "/img/projects/InjisPortFolio_1.png",
-      "/img/projects/InjisPortFolio_2.png",
+      "/img/projects/coco_1.png",
+      "/img/projects/coco_1_light.png",
+      "/img/projects/coco_2.png",
+      "/img/projects/coco_3.png",
+      "/img/projects/coco_4.png",
+      "/img/projects/coco_5.png",
+      "/img/projects/coco_6.png",
     ],
   },
 ];
