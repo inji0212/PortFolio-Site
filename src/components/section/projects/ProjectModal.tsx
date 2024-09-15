@@ -16,8 +16,14 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({
   );
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black  dark:bg-opacity-80 bg-opacity-50">
-      <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow-lg max-w-2xl md:max-w-4xl w-full overflow-hidden h-[95%]">
+    <div
+      className="fixed inset-0 flex items-center justify-center z-50 bg-black dark:bg-opacity-80 bg-opacity-50"
+      onClick={onClose} // 오버레이 클릭 시 모달 닫기
+    >
+      <div
+        className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow-lg max-w-2xl md:max-w-4xl w-full overflow-hidden h-[95%]"
+        onClick={(e) => e.stopPropagation()} // 모달 내부 클릭 시 이벤트 전파 중지
+      >
         <button
           onClick={onClose}
           className="float-right -mr-2 -mt-3 text-gray-800 dark:text-white"
@@ -48,7 +54,7 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({
             <img
               src={project.images[currentImageIndex]}
               alt={project.title}
-              className="w-full lg:max-h-[360px] object-fill "
+              className="w-full lg:max-h-[360px] object-fill"
             />
             <button
               onClick={prevImage}
@@ -79,10 +85,20 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({
           {/* 프로젝트 설명 */}
           <div className="w-full p-4">
             <p className="whitespace-pre-line mb-4">{project.description}</p>
-            <div className="flex ">
+            <div className="flex">
+              {project.url ? (
+                <Button
+                  href={project.url}
+                  className="text-xs hover:scale-100 hover:underline mb-2 mr-2"
+                >
+                  주소 바로가기
+                </Button>
+              ) : (
+                ""
+              )}
               <Button
                 href={project.git}
-                className="text-xs hover:scale-100 hover:underline mb-2 "
+                className="text-xs hover:scale-100 hover:underline mb-2"
               >
                 GIT 바로가기
               </Button>
@@ -98,16 +114,21 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({
           <hr className="w-full border-t border-gray-300 my-4" />
 
           {/* 타이틀 섹션 */}
-          <div className="w-full mb-4">
-            <h4 className="text-2xl font-black mb-2">
+          <div className="w-full mb-4 flex items-baseline flex-wrap">
+            <h4 className="text-2xl font-black mb-2 mr-2">
               {project.teamSize === "Personal"
                 ? "개인 프로젝트"
                 : "팀 프로젝트"}
             </h4>
+            {project.teamSize === "Personal" ? (
+              ""
+            ) : (
+              <p className="text-xs font-semibold">{project.member}</p>
+            )}
           </div>
 
           {/* 기여 부분 */}
-          <div className="w-full mb-4 ">
+          <div className="w-full mb-4">
             <h4 className="text-lg font-bold mb-2 ml-2">
               ✍️ 주요업무 및 상세역할
             </h4>

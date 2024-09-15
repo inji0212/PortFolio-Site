@@ -5,7 +5,7 @@ import pretendard from "@/styles/fonts";
 import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
-  title: "Inji's PortFolio",
+  title: "이인지 | 프론트엔드 포트폴리오",
   description: "Frontend Developer Portfolio",
 };
 

@@ -34,21 +34,22 @@ const About: React.FC = () => {
       id="about"
       className="py-20 flex justify-center flex-col items-center min-h-screen"
     >
-      <h2 className="text-6xl font-bold mb-10 text-center">ABOUT</h2>
+      <h2 className="text-5xl font-bold mb-10 text-center">ABOUT ME</h2>
       <div className="flex flex-col md:flex-row items-center h-4/5">
         <img
           src="/img/profile.png" // 본인 사진 경로로 수정
           alt="Inji Lee"
-          className="w-60 h-auto rounded-3xl hover:scale-105 mb-4 md:mb-0 transform transition-transform duration-200"
+          className="w-56 h-auto rounded-3xl hover:scale-105 mb-4 md:mb-0 transform transition-transform duration-200"
         />
         <div className="ml-0 md:ml-10 text-center md:text-left">
           <h2
             className="text-3xl font-bold mb-2"
             dangerouslySetInnerHTML={{ __html: displayText }} // HTML로 줄바꿈 적용
           ></h2>
-          <div className="flex space-x-4 mt-4">
+          <p className="font-semibold text-lg">Birth | 1999.02.12</p>
+          <p className="font-semibold text-lg">Email | in22ji@gmail.com</p>
+          <div className="flex space-x-4 mt-6">
             <Button href="https://github.com/inji0212">GitHub</Button>
-            <Button href="mailto:in22ji@gmail.com">Email</Button>
 
             <button
               onClick={() =>
@@ -56,11 +57,12 @@ const About: React.FC = () => {
                   behavior: "smooth",
                 })
               }
-              className="btn bg-fuchsia-600 text-white rounded-lg px-5 py-2 hover:scale-110 transform transition-transform"
+              className="btn bg-fuchsia-600 text-white rounded-lg px-5 py-2 hover:underline transform transition-transform"
             >
               Contact
             </button>
           </div>
+          <p className="font-semibold text-xs pt-20">Update.24.09.16</p>
         </div>
       </div>
     </section>
