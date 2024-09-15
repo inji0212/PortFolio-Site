@@ -75,12 +75,6 @@ const Header: React.FC = () => {
 
       {/* Mobile Menu Toggle */}
       <div className="md:hidden flex  space-x-4 items-center">
-        <a
-          href="https://github.com/inji0212"
-          className="text-gray-800 dark:text-white hover:text-fuchsia-500"
-        >
-          <FaGithub />
-        </a>
         <ModeToggle />
         <button
           onClick={() => setIsDrawerOpen(true)} // 메뉴 버튼 클릭 시 드로어 열기
@@ -102,7 +96,7 @@ const Header: React.FC = () => {
 
       {/* Drawer Menu */}
       <div
-        className={`fixed top-0 right-0 h-full bg-white dark:bg-gray-800 shadow-lg transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-full bg-white dark:bg-gray-800 shadow-lg transform transition-transform duration-300 opacity-95 ${
           isDrawerOpen ? "translate-x-0" : "translate-x-full"
         } md:hidden w-64 z-50`}
       >
@@ -137,6 +131,12 @@ const Header: React.FC = () => {
           >
             Contact
           </button>
+          <a
+            href="https://github.com/inji0212"
+            className="text-gray-800 dark:text-white hover:text-fuchsia-500"
+          >
+            <FaGithub />
+          </a>
         </div>
       </div>
 
