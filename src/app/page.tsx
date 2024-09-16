@@ -16,7 +16,7 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      <Header />
+      {/* <Header /> */}
       <About />
       <Skills />
       <Projects />
