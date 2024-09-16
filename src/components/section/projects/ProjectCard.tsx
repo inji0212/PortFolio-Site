@@ -3,6 +3,7 @@ import React from "react";
 import { useImageSlider } from "@/hooks/useImageSlider";
 import { Project } from "@/data/projectsData";
 import Chip from "@/components/ui/chip";
+import Image from "next/image";
 
 const ProjectCard: React.FC<{ project: Project; onClick: () => void }> = ({
   project,
@@ -20,7 +21,7 @@ const ProjectCard: React.FC<{ project: Project; onClick: () => void }> = ({
         className="flex flex-col h-full transform transition-transform duration-300 "
       >
         <div className="flex justify-center relative overflow-hidden">
-          <img
+          <Image
             src={project.images[currentImageIndex]}
             alt={project.title}
             className="w-full aspect-1 object-cover transition-opacity duration-300 ease-in-out"
