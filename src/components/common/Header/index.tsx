@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { FaGithub } from "react-icons/fa";
-import ModeToggle from "../../common/header/mode-toggle";
+import ModeToggle from "./mode-toggle";
 import { ArrowUp, Menu } from "lucide-react";
 
 const Header: React.FC = () => {
@@ -33,7 +33,7 @@ const Header: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 w-full flex items-center justify-between h-[70px] bg-white dark:bg-gray-900 px-4 md:px-10 shadow-md z-50 transition-opacity duration-500 ease-in-out">
       {/* Logo */}
-      <p className="text-lg font-black">INJI's PortFolio</p>
+      <p className="text-lg font-black">INJI&apos;s PortFolio</p>
 
       {/* Navigation Menu */}
       <nav className="hidden md:flex space-x-8 items-center">
