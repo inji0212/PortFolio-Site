@@ -100,7 +100,7 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({
                 href={project.git}
                 className="text-xs hover:scale-100 hover:underline mb-2"
               >
-                GIT 바로가기
+                Git 바로가기
               </Button>
             </div>
             <div className="flex items-center flex-wrap mt-2">

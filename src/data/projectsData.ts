@@ -22,6 +22,7 @@ export const projectsData: Project[] = [
     teamSize: "Personal",
     titleDescription: "개인 포트폴리오 사이트",
     git: "https://github.com/inji0212/PortFolio-Site",
+    url: "https://leeinjifrontendportfolio.vercel.app/",
 
     description: `개인 포트폴리오 사이트입니다.
       about, skills, project, contact을 통해 포트폴리오를 보다 편히 보여주기 위해 제작하였습니다.`,
@@ -142,7 +143,8 @@ export const projectsData: Project[] = [
       ` 채팅 : 이용자들 서로 응원할 수 있는 단체 채팅 기능입니다.
         - web Socket을 통해 실시간 채팅 기능을 구현했습니다.
         - 전체 채팅에서 검색이 가능하며, 내 채팅을 삭제할 수 있습니다.
-        - 유저의 아이디와 시간으로 채팅을 구분할 수 있습니다.`,
+        - 유저의 아이디와 시간으로 채팅을 구분할 수 있습니다.
+        - 스크롤 버튼을 통해 채팅을 가장 밑으로 내릴 수 있습니다.`,
       ` 출석 체크 : 하루에 한번만 가능하게 구현했습니다.`,
       ` 메인페이지 : 어떤 페이지로든 이동할 수 있는 기본 페이지입니다.
         - 인사말, 출석체크, 수정중인 프로젝트로 이동, 채팅 미리보기 기능들을 반응형으로 볼 수 있습니다.
