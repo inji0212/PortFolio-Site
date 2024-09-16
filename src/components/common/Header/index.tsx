@@ -9,6 +9,7 @@ const Header: React.FC = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false); // 드로어 상태 관리
 
   useEffect(() => {
+    // 브라우저에서만 동작하도록 useEffect 내에서 이벤트 리스너를 설정
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const documentHeight =
@@ -17,12 +18,15 @@ const Header: React.FC = () => {
       setScrollPosition(scrollPercent);
     };
 
+    // 스크롤 이벤트 리스너 추가
     window.addEventListener("scroll", handleScroll);
 
+    // 컴포넌트가 언마운트될 때 이벤트 리스너 제거
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
+    // 섹션으로 스크롤하는 함수
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
@@ -71,11 +75,11 @@ const Header: React.FC = () => {
       </nav>
 
       {/* Mobile Menu Toggle */}
-      <div className="md:hidden flex  space-x-4 items-center">
+      <div className="md:hidden flex space-x-4 items-center">
         <ModeToggle />
         <button
           onClick={() => setIsDrawerOpen(true)} // 메뉴 버튼 클릭 시 드로어 열기
-          className=" rounded"
+          className="rounded"
         >
           <Menu />
         </button>
