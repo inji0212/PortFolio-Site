@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
-// import Header from "../components/common/header";
+import Header from "../components/common/header";
 import pretendard from "@/styles/fonts";
 import { ThemeProvider } from "next-themes";
 
@@ -33,7 +33,7 @@ export default function RootLayout({
       </head>
       <body className="bg-white dark:bg-gray-900 transition-colors duration-300 ease-in-out">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {/* <Header /> */}
+          <Header />
           {children}
         </ThemeProvider>
       </body>
