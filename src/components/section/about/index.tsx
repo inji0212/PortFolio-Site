@@ -1,7 +1,5 @@
 // components/sections/About.tsx
 import Button from "@/components/ui/button";
-import Image from "next/image";
-
 import React, { useState, useEffect } from "react";
 
 const About: React.FC = () => {
