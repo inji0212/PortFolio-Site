@@ -49,7 +49,7 @@ const About: React.FC = () => {
           ></h2>
           <p className="font-semibold text-lg">Birth | 1999.02.12</p>
           <p className="font-semibold text-lg">Email | in22ji@gmail.com</p>
-          <div className="flex space-x-4 mt-6">
+          <div className="flex space-x-4 mt-6 justify-center md:justify-start">
             <Button href="https://github.com/inji0212">GitHub</Button>
 
             <button

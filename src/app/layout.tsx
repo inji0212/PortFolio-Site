@@ -4,7 +4,7 @@ import "@/styles/globals.css";
 import pretendard from "@/styles/fonts";
 import { ThemeProvider } from "next-themes";
 import Footer from "@/components/common/footer";
-import Header from "@/components/common/header";
+import Header from "../components/common/header";
 
 export const metadata: Metadata = {
   title: "이인지 | 프론트엔드 포트폴리오",
