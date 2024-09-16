@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Header from "@/components/common/header";
+import Header from "../components/common/header";
 import About from "@/components/section/about";
 import Skills from "@/components/section/skills";
 import Projects from "@/components/section/projects";
