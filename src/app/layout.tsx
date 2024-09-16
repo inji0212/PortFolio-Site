@@ -33,7 +33,7 @@ export default function RootLayout({
       </head>
       <body className="bg-white dark:bg-gray-900 transition-colors duration-300 ease-in-out">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Header />
+          {/* <Header /> */}
           {children}
         </ThemeProvider>
       </body>
