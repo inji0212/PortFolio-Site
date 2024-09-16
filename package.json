@@ -25,7 +25,7 @@
     "react-toastify": "^10.0.5",
     "react-typed": "^2.0.12",
     "tailwind-merge": "^2.5.2",
-    "webpack": "^4.28.4"
+    "webpack": "4.28"
   },
   "devDependencies": {
     "@types/node": "^20",
