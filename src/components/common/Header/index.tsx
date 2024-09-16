@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { FaGithub } from "react-icons/fa";
-import ModeToggle from "./mode-toggle";
+import ModeToggle from "../mode-toggle";
 import { ArrowUp, Menu } from "lucide-react";
 
 const Header: React.FC = () => {
@@ -146,4 +146,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export { Header };

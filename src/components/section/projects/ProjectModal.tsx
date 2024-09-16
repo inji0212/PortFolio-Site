@@ -4,7 +4,6 @@ import { useImageSlider } from "@/hooks/useImageSlider";
 import { Project } from "@/data/projectsData";
 import Button from "@/components/ui/button";
 import Chip from "@/components/ui/chip";
-import Image from "next/image";
 
 const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({
   project,
@@ -52,7 +51,7 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({
 
           {/* 이미지 슬라이더 */}
           <div className="relative w-full mb-4">
-            <Image
+            <img
               src={project.images[currentImageIndex]}
               alt={project.title}
               className="w-full lg:max-h-[360px] object-fill"

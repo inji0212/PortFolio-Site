@@ -38,9 +38,10 @@ const About: React.FC = () => {
     >
       <h2 className="text-5xl font-bold mb-10 text-center">ABOUT ME</h2>
       <div className="flex flex-col md:flex-row items-center h-4/5">
-        <Image
+        <img
           src="/img/profile.png" // 본인 사진 경로로 수정
           alt="Inji Lee"
+          width={224}
           className="w-56 h-auto rounded-3xl hover:scale-105 mb-4 md:mb-0 transform transition-transform duration-200"
         />
         <div className="ml-0 md:ml-10 text-center md:text-left">

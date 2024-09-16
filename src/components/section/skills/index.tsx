@@ -5,7 +5,6 @@ import {
   DevelopmentSkills,
   ETCSkills,
 } from "@/data/skillsData"; // 데이터를 가져옴
-import Image from "next/image";
 
 const Skills: React.FC = () => {
   return (
@@ -24,11 +23,7 @@ const Skills: React.FC = () => {
                 key={index}
                 className="relative group flex items-center justify-center bg-white dark:bg-gray-700 border dark:border-gray-800  p-5 rounded-lg shadow-md hover:scale-105 transform transition-transform duration-200"
               >
-                <Image
-                  src={skill.icon}
-                  alt={skill.name}
-                  className="w-20 h-20"
-                />
+                <img src={skill.icon} alt={skill.name} className="w-20 h-20" />
 
                 {/* 오버레이 설정 */}
                 <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-200 rounded-lg"></div>
@@ -53,11 +48,7 @@ const Skills: React.FC = () => {
                 key={index}
                 className=" dark:border-gray-800 relative group flex items-center justify-center bg-white dark:bg-gray-700 border p-5 rounded-lg shadow-md hover:scale-105 transform transition-transform duration-200"
               >
-                <Image
-                  src={skill.icon}
-                  alt={skill.name}
-                  className="w-20 h-20"
-                />
+                <img src={skill.icon} alt={skill.name} className="w-20 h-20" />
 
                 {/* 오버레이 설정 */}
                 <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-200 rounded-lg"></div>
@@ -82,11 +73,7 @@ const Skills: React.FC = () => {
                 key={index}
                 className="dark:border-gray-800 relative group flex items-center justify-center bg-white dark:bg-gray-700 border p-5 rounded-lg shadow-md hover:scale-105 transform transition-transform duration-200"
               >
-                <Image
-                  src={skill.icon}
-                  alt={skill.name}
-                  className="w-20 h-20"
-                />
+                <img src={skill.icon} alt={skill.name} className="w-20 h-20" />
 
                 {/* 오버레이 설정 */}
                 <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-200 rounded-lg"></div>
